@@ -1,0 +1,22 @@
+.header{
+    width: max-content;
+    margin: 20px auto;
+}
+.list{
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.list a{
+    background-color:var(--color-gray-400);
+    padding: 10px 25px;
+    text-decoration: none;
+    color: var(--color-gray-600);
+    border-radius: 7px;
+}
+
+.list a:hover,.list a.active{
+    color: var(--color-gray-800);
+    background-color: var(--color-primary-600);
+}
