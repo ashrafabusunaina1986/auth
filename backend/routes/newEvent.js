@@ -11,8 +11,8 @@ router.route('/').post((req, res, next) => {
         if (data.title.trim().length < 3) {
             errors.title = 'enter title >2 letters.'
         }
-        if (!data.image.includes('http://') || !data.image.includes('https://')) {
-            errors.image = 'enter url start word http:// or https://'
+        if (!data.image.includes('.jpg')) {
+            errors.image = 'enter url start word .jpg'
         }
         if (data.date.trim().length === 0) {
             errors.date = 'enter date'
