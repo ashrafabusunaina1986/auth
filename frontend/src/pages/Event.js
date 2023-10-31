@@ -19,7 +19,7 @@ function EventPage() {
 export default EventPage
 
 async function loadEvents() {
-  const response = await fetch('http://localhost:5000/events')
+  const response = await fetch('https://auth-inky-alpha.vercel.app/events')
   if (!response.ok) {
     throw json({ message: 'Could not fetch events.' },
       { status: 500 })

@@ -63,11 +63,11 @@ export async function action({ request, params }) {
         description: data.get('desc')
     }
     if (eventData) {
-        let url = `http://localhost:5000/events/new`
+        let url = `https://auth-inky-alpha.vercel.app/events/new`
 
         if (method === 'PATCH') {
             const id = params.eventId
-            url = `http://localhost:5000/events/${id}/edit`
+            url = `https://auth-inky-alpha.vercel.app/events/${id}/edit`
         }
         const token = getToken()
         const response = await fetch(url, {

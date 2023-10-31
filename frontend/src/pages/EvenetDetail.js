@@ -22,13 +22,13 @@ function EvenetDetailPage() {
 export default EvenetDetailPage
 
 async function loadEvent(id) {
-  const response = await fetch(`http://localhost:5000/events/${id}`)
+  const response = await fetch(`https://auth-inky-alpha.vercel.app/events/${id}`)
   if (!response.ok) throw json({ message: 'could not find details selected event.' },
     { status: 500 })
   return await response.json()
 }
 async function loadEvents() {
-  const response = await fetch(`http://localhost:5000/events`)
+  const response = await fetch(`https://auth-inky-alpha.vercel.app/events`)
   if (!response.ok) throw json({ message: 'could not find events.' },
     { status: 500 })
   return await response.json()
@@ -43,7 +43,7 @@ export function loader({ params }) {
 export async function action({ params, request }) {
   const eventId = params.eventId
   const token=getToken()
-  const response = await fetch(`http://localhost:5000/events/${eventId}`, {
+  const response = await fetch(`https://auth-inky-alpha.vercel.app/events/${eventId}`, {
     method: request.method,
     headers:{
       'Authorization': 'Bearer ' + token
